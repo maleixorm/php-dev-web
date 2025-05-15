@@ -1,13 +1,18 @@
 <?php
 
 $usuarioCartaoLoja = true;
-$valorCompra = 225.00;
+$valorCompra = 95;
 $valorFrete = 50;
-$descontoFrete = false;
+$descontoFrete = true;
 
-if ($usuarioCartaoLoja && $valorCompra >= 100) {
+if ($usuarioCartaoLoja && $valorCompra >= 400) {
     $valorFrete = 0;
-    $descontoFrete = true;
+} elseif ($usuarioCartaoLoja && $valorCompra >= 200) {
+    $valorFrete = 25;
+} elseif ($usuarioCartaoLoja && $valorCompra >= 100) {
+    $valorFrete = 10;
+} else {
+    $descontoFrete = false;
 }
 ?>
 
