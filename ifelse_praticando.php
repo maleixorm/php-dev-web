@@ -1,19 +1,21 @@
 <?php
 
 $usuarioCartaoLoja = true;
-$valorCompra = 225;
+$valorCompra = 95;
 $valorFrete = 50;
-$descontoFrete = true;
+$valorFreteAux = $usuarioCartaoLoja && $valorCompra >= 400 ? 0 : ($usuarioCartaoLoja && $valorCompra >= 200 ? 25 : ($usuarioCartaoLoja && $valorCompra >= 100 ? 10 : 50)) ;
+$descontoFrete = $valorFrete !== $valorFreteAux ? true : false;
+$valorFrete = $valorFreteAux;
 
-if ($usuarioCartaoLoja && $valorCompra >= 400) {
-    $valorFrete = 0;
-} elseif ($usuarioCartaoLoja && $valorCompra >= 200) {
-    $valorFrete = 25;
-} elseif ($usuarioCartaoLoja && $valorCompra >= 100) {
-    $valorFrete = 10;
-} else {
-    $descontoFrete = false;
-}
+// if ($usuarioCartaoLoja && $valorCompra >= 400) {
+//     $valorFrete = 0;
+// } elseif ($usuarioCartaoLoja && $valorCompra >= 200) {
+//     $valorFrete = 25;
+// } elseif ($usuarioCartaoLoja && $valorCompra >= 100) {
+//     $valorFrete = 10;
+// } else {
+//     $descontoFrete = false;
+// }
 ?>
 
 
