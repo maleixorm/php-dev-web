@@ -1,7 +1,7 @@
 <?php
 
 $usuarioCartaoLoja = true;
-$valorCompra = 95;
+$valorCompra = 225;
 $valorFrete = 50;
 $descontoFrete = true;
 
@@ -27,23 +27,11 @@ if ($usuarioCartaoLoja && $valorCompra >= 400) {
 <body>
     <h1>Detalhes do pedido</h1>
     <p>Possui cartão da loja?
-        <strong><?php
-            if ($usuarioCartaoLoja) {
-                echo 'SIM';
-            } else {
-                echo 'NÃO';
-            }
-        ?></strong>
+        <strong><?= $usuarioCartaoLoja ? 'SIM' : 'NÃO'; ?></strong>
     </p>
     <p>Valor da compra: <strong>R$ <?= $valorCompra; ?></strong></p>
     <p>Recebeu desconto no frete?
-        <strong><?php
-            if ($descontoFrete) {
-                echo 'SIM';
-            } else {
-                echo 'NÃO';
-            }
-        ?></strong>
+        <strong><?= $descontoFrete ? 'SIM' : 'NÃO'; ?></strong>
     </p>
     <p>Valor do frete: <strong>R$ <?= $valorFrete; ?></strong></p>
 </body>
