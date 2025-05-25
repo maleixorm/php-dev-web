@@ -19,3 +19,10 @@ echo $y->resumirCadFunc();
 
 $y->modificarNumFilhos(3);
 echo $y->resumirCadFunc();
+
+echo '<hr>';
+
+$x = new Funcionario();
+echo $x->resumirCadFunc();
+$x->modificarNumFilhos(3);
+echo $x->resumirCadFunc();
