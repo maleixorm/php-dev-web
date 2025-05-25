@@ -1,9 +1,29 @@
 <?php
 
 class Funcionario {
-    public $nome = 'José';
-    public $telefone = '11 99999-8888';
-    public $numFilhos = 2;
+    public $nome = null;
+    public $telefone = null;
+    public $numFilhos = null;
+
+    function setNome($nome) {
+        $this->nome = $nome;
+    }
+
+    function setTelefone($telefone) {
+        $this->telefone = $telefone;
+    }
+
+    function setNumFilhos($numFilhos) {
+        $this->numFilhos = $numFilhos;
+    }
+
+    function getNome(){
+        return $this->nome;
+    }
+    
+    function getNumFilhos(){
+        return $this->numFilhos;
+    }
 
     function resumirCadFunc() {
         return "$this->nome possui $this->numFilhos filho(s).<br>";
@@ -15,14 +35,13 @@ class Funcionario {
 }
 
 $y = new Funcionario();
-echo $y->resumirCadFunc();
-
-$y->modificarNumFilhos(3);
+$y->setNome('José');
+$y->setNumFilhos(4);
 echo $y->resumirCadFunc();
 
 echo '<hr>';
 
 $x = new Funcionario();
-echo $x->resumirCadFunc();
-$x->modificarNumFilhos(3);
+$x->setNome('Maria');
+$x->setNumFilhos(2);
 echo $x->resumirCadFunc();
