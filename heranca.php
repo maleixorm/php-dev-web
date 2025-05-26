@@ -12,7 +12,7 @@ class Carro {
     }
 
     function acelerar() {
-        echo 'Acelerar';
+        echo 'Acelerar!';
     }
 
     function abrirTetoSolar() {
@@ -27,3 +27,33 @@ class Carro {
         echo 'Posição do volante alterada.';
     }
 }
+
+class Moto {
+    public $placa;
+    public $cor;
+    public $contra_peso_guidao;
+
+    function __construct($placa, $cor, $contra_peso_guidao)
+    {
+        $this->placa = $placa;
+        $this->cor = $cor;
+        $this->contra_peso_guidao = $contra_peso_guidao;
+    }
+
+    function acelerar() {
+        echo 'Acelerar!';
+    }
+
+    function empinar() {
+        echo 'Empinar';
+    }
+}
+
+$carro = new Carro('ABC1234', 'Branco', true);
+$moto = new Moto('DEF1122', 'Preta', true);
+
+echo '<pre>';
+print_r($carro);
+echo '<br>';
+print_r($moto);
+echo '</pre>';
