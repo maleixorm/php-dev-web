@@ -13,6 +13,10 @@ class Veiculo {
     function acelerar() {
         echo 'Acelerar!';
     }
+
+    function freiar() {
+        echo 'Freiar!';
+    }
 }
 
 class Carro extends Veiculo {
@@ -48,15 +52,28 @@ class Moto extends Veiculo{
     }
 
     function empinar() {
-        echo 'Empinar';
+        echo 'Empinar!';
     }
 }
 
-$carro = new Carro('ABC1234', 'Branco', true);
-$moto = new Moto('DEF1122', 'Preta', true);
+$carro = new Carro('ABC1234', 'Branco', false);
+$moto = new Moto('DEF1122', 'Preto', true);
 
 echo '<pre>';
 print_r($carro);
 echo '<br>';
 print_r($moto);
 echo '</pre>';
+echo '<hr>';
+
+$carro->abrirTetoSolar();
+echo '<br>';
+$carro->acelerar();
+echo '<br>';
+$carro->freiar();
+echo '<hr>';
+$moto->acelerar();
+echo '<br>';
+$moto->empinar();
+echo '<br>';
+$moto->freiar();
