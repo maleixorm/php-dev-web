@@ -1,19 +1,28 @@
 <?php
 
-class Carro {
+class Veiculo {
     public $placa;
     public $cor;
+
+    function __construct($placa, $cor)
+    {
+        $this->placa = $placa;
+        $this->cor = $cor;
+    }
+
+    function acelerar() {
+        echo 'Acelerar!';
+    }
+}
+
+class Carro extends Veiculo {
     public $teto_solar;
 
     function __construct($placa, $cor, $teto_solar) {
         $this->placa = $placa;
         $this->cor = $cor;
         $this->teto_solar = $teto_solar;
-    }
-
-    function acelerar() {
-        echo 'Acelerar!';
-    }
+    }    
 
     function abrirTetoSolar() {
         if ($this->teto_solar) {
@@ -28,9 +37,7 @@ class Carro {
     }
 }
 
-class Moto {
-    public $placa;
-    public $cor;
+class Moto extends Veiculo{
     public $contra_peso_guidao;
 
     function __construct($placa, $cor, $contra_peso_guidao)
@@ -38,10 +45,6 @@ class Moto {
         $this->placa = $placa;
         $this->cor = $cor;
         $this->contra_peso_guidao = $contra_peso_guidao;
-    }
-
-    function acelerar() {
-        echo 'Acelerar!';
     }
 
     function empinar() {
