@@ -11,8 +11,19 @@ class Pai {
         $this->sobrenome = $sobrenome;
         $this->humor = $humor;
     }
+
+    public function getNome() {
+        return $this->nome;
+    }
+
+    public function setNome($nome) {
+        $this->nome = $nome;
+    }
 }
 
 $pai = new Pai('Marcos', 'Aleixo', 'Feliz');
 
-echo $pai->humor;
+echo $pai->getNome();
+echo '<br>';
+$pai->setNome('Mateus');
+echo $pai->getNome();
