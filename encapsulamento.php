@@ -16,8 +16,10 @@ class Pai {
         return $this->nome;
     }
 
-    public function setNome($nome) {
-        $this->nome = $nome;
+    public function setNome($valor) {
+        if (strlen($valor) >= 4) {
+            $this->nome = $valor;
+        }
     }
 }
 
