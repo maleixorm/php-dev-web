@@ -21,6 +21,20 @@ class Pai {
             $this->$attr = $value;
         }
     }
+
+    private function executarMania() {
+        echo 'Assobiar';
+    }
+
+    protected function responder() {
+        echo 'Oi';
+    }
+
+    public function executarAcao() {
+        $this->executarMania();
+        echo '<br>';
+        $this->responder();
+    }
 }
 
 $pai = new Pai('Lucas', 'Costa', 'Feliz');
@@ -29,3 +43,5 @@ echo $pai->__get('nome');
 echo '<br>';
 $pai->__set('nome', 'Ivo');
 echo $pai->__get('nome');
+echo '<br>';
+echo $pai->executarAcao();
