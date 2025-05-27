@@ -12,20 +12,20 @@ class Pai {
         $this->humor = $humor;
     }
 
-    public function getNome() {
-        return $this->nome;
+    public function __get($attr) {
+        return $this->$attr;
     }
 
-    public function setNome($valor) {
-        if (strlen($valor) >= 4) {
-            $this->nome = $valor;
+    public function __set($attr, $value) {
+        if (strlen($value) >= 3) {
+            $this->$attr = $value;
         }
     }
 }
 
-$pai = new Pai('Marcos', 'Aleixo', 'Feliz');
+$pai = new Pai('Lucas', 'Costa', 'Feliz');
 
-echo $pai->getNome();
+echo $pai->__get('nome');
 echo '<br>';
-$pai->setNome('Mateus');
-echo $pai->getNome();
+$pai->__set('nome', 'Ivo');
+echo $pai->__get('nome');
