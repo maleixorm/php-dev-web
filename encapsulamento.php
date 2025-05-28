@@ -76,3 +76,13 @@ $filho->setAtributo('nome', 'Michel');
 echo $filho->getAtributo('nome');
 echo '<br>';
 echo $filho->executarAcao();
+
+echo '<hr>';
+
+echo '<pre>';
+print_r(get_class_methods($filho));
+echo '</pre>';
+
+echo '<pre>';
+print_r($filho);
+echo '</pre>';
