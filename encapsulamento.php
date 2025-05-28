@@ -37,7 +37,29 @@ class Pai {
     }
 }
 
+class Filho extends Pai {
+    private $nome;
+    private $idade;
+
+    function __construct($nome, $sobrenome, $humor, $idade)
+    {
+        $this->nome = $nome;
+        $this->sobrenome = $sobrenome;
+        $this->humor = $humor;
+        $this->idade = $idade;
+    }
+
+    public function getAtributo($attr) {
+        return $this->$attr;
+    }
+
+    public function setAtributo($attr, $value) {
+        return $this->$attr = $value;
+    }
+}
+
 $pai = new Pai('Lucas', 'Costa', 'Feliz');
+$filho = new Filho('André', 'Oliveira', 'Alegre', 14);
 
 echo $pai->__get('nome');
 echo '<br>';
@@ -45,3 +67,12 @@ $pai->__set('nome', 'Ivo');
 echo $pai->__get('nome');
 echo '<br>';
 echo $pai->executarAcao();
+
+echo '<hr>';
+
+echo $filho->getAtributo('nome');
+echo '<br>';
+$filho->setAtributo('nome', 'Michel');
+echo $filho->getAtributo('nome');
+echo '<br>';
+echo $filho->executarAcao();
