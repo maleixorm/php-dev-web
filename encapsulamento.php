@@ -56,6 +56,14 @@ class Filho extends Pai {
     public function setAtributo($attr, $value) {
         return $this->$attr = $value;
     }
+
+    private function executarMania() {
+        echo 'Cantar';
+    }
+
+    protected function responder() {
+        echo 'Olá';
+    }
 }
 
 $pai = new Pai('Lucas', 'Costa', 'Feliz');
