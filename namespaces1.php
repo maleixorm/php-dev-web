@@ -27,3 +27,7 @@ class Cliente {
         $this->$attr;
     }
 }
+
+$c = new \A\Cliente('John');
+print_r($c);
+$c->__get('nome');
