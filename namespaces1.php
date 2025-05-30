@@ -13,7 +13,7 @@ class Cliente implements \A\Cadastro {
     }
     public function __get($attr)
     {
-        $this->$attr;
+        return $this->$attr;
     }
     public function salvar()
     {
@@ -38,7 +38,7 @@ class Cliente implements \B\Cadastro {
     }
     public function __get($attr)
     {
-        $this->$attr;
+        return $this->$attr;
     }
     public function remover()
     {
