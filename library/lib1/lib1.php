@@ -15,7 +15,7 @@ class Cliente implements Cadastro {
     
     public function __get($attr)
     {
-        $this->$attr;
+       return $this->$attr;
     }
     
     public function salvar()
