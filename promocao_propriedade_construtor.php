@@ -20,8 +20,8 @@ class Produto {
     }
 }
 
-$produto = new Produto('Smartphone', 1500);
-$produto2 = new Produto('Geladeira', 2399);
+$produto = new Produto(nome: 'Smartphone', valor: 1500);
+$produto2 = new Produto(nome: 'Geladeira', valor: 2399);
 
 echo "Produto: " . $produto->nome;
 echo "<br>";
